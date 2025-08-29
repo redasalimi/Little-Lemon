@@ -203,19 +203,19 @@ footer p {
     padding-bottom: 1rem;
   }
 
-  .column {
+.column {
     flex-basis: 50%;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
   }
 
-  .column figure {
+.column figure {
     padding: 0px 12px;
 
   }
 
 
-  .videowrap {
+.videowrap {
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
 	padding-top: 1rem;
