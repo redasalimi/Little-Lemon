@@ -18,10 +18,12 @@ from django.contrib.auth.models import User
 class MenuItemsView(ListCreateAPIView):
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
+    permission_classes = [IsAuthenticated]
 
 class SingleMenuItemView(RetrieveUpdateDestroyAPIView):
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
+    permission_classes = [IsAuthenticated]
 
 # Booking
 class BookingViewSet(ModelViewSet):
@@ -34,15 +36,3 @@ class UserViewSet(ModelViewSet):
     permission_classes = [IsAuthenticated]
 
 
-# class MenuView(APIView):
-#     def get(self, request):
-#         items = Menu.objects.all()
-#         serializer = MenuSerializer(items, many= True)
-#         return Response(serializer.data)
-
-#     def post(self, request):
-#         serializer = MenuSerializer(data=request.data)
-
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response({"status": "success", 'data': serializer.data})
